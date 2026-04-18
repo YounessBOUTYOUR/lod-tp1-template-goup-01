@@ -14,6 +14,14 @@
 | GeoNames | [geonames.org/countries/MA/morocco.html](https://www.geonames.org/countries/MA/morocco.html) | villes et hiérarchie géographique | identifiant géographique stable (geonameId), utile pour normaliser les localisations | ne couvre pas les établissements d'enseignement, seulement l'aspect géographique |
 | DBpedia | [dbpedia.org](https://dbpedia.org/) | grandes universités, certaines villes | source linked data complémentaire, endpoint SPARQL disponible | couverture plus faible et parfois moins à jour que Wikidata |
 
+### Vérification de couverture minimale par type d'entité
+
+| Type d'entité retenu | Référentiel 1 | Référentiel 2 | Référentiel 3 (optionnel) | Condition "au moins 2" |
+| --- | --- | --- | --- | --- |
+| Etablissement | Wikidata | DBpedia | data.gov.ma (source officielle) | Respectée |
+| Université | Wikidata | DBpedia | data.gov.ma (source officielle) | Respectée |
+| Ville | GeoNames | Wikidata | DBpedia (partiel) | Respectée |
+
 ## 2. Critères de comparaison
 
 Expliquez les critères utilisés pour comparer les référentiels :

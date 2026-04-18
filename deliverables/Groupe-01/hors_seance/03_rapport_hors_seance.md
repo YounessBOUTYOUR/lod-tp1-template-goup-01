@@ -18,6 +18,8 @@ Présentez en quelques lignes le contexte du TP, le jeu de données choisi, les 
 
 Ce travail porte sur le cas réel imposé : la ressource officielle **Universités Publiques 2024-2025** publiée sur le portail data.gov.ma. Après nettoyage structurel du fichier XLSX, le dataset contient **165 établissements**, rattachés à **12 universités**, répartis dans **38 villes**.
 
+Conformément à la description de la source, ce périmètre comprend **162 établissements de formation** et **3 instituts de recherche scientifique**.
+
 Nous avons retenu trois types d'entités prioritaires : **établissement**, **université** et **ville**. Le problème d'ingénierie des données étudié est la préparation de ces entités à une future publication en données ouvertes liées, en particulier :
 
 - la normalisation des valeurs textuelles
@@ -186,3 +188,25 @@ Annexe suggérée pour la version finale :
 - capture de la feuille "Universités Publiques" (5 premières lignes de données)
 - mini schéma conceptuel : Etablissement -> Université, Etablissement -> Ville, Ville -> GeoNames
 - tableau de suivi des appariements à revalider (statut: retenu/non retenu)
+
+Schéma conceptuel Mermaid :
+
+```mermaid
+graph LR
+  D["Dataset Universites Publiques 2024-2025"]
+  E["Etablissement"]
+  U["Universite"]
+  V["Ville"]
+  X["Effectifs 2023-2024"]
+  W["Wikidata"]
+  G["GeoNames"]
+
+  D --> E
+  D --> U
+  D --> V
+  E -->|est_rattache_a| U
+  E -->|est_localise_dans| V
+  E -->|a_pour_effectif| X
+  U -. alignement .-> W
+  V -. alignement .-> G
+```
